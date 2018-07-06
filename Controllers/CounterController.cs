@@ -11,12 +11,12 @@ namespace WordCount2.Controllers
         [HttpGet("/begin")]
         public ActionResult Index()
         {
-
+            
             return View();
         }
 
 
-        [HttpGet("/resultForm")]
+        [HttpPost("/result")]
         public ActionResult Result()
         {
             RepeatCounter forms = new RepeatCounter();
@@ -27,16 +27,18 @@ namespace WordCount2.Controllers
         }
 
 
-        [HttpPost("/result")]
-        public ActionResult Post()
-        {
-            RepeatCounter forms = new RepeatCounter();
-            forms.GetStringOne();
-            forms.GetStringTwo();
+
+
+        //[HttpPost("/result")]
+        //public ActionResult Post()
+        //{
+        //    RepeatCounter forms = new RepeatCounter();
+        //    forms.GetStringOne();
+        //    forms.GetStringTwo();
            
 
-            return View("Result", forms);
-        }
+        //    return View("Result", forms);
+        //}
 
         //[HttpPost("/result")]
         //public ActionResult ResultPost()

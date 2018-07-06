@@ -11,7 +11,12 @@ namespace WordCount2.Models
         private static List<RepeatCounter> _strings = new List<RepeatCounter> { };
 
 
+        //public RepeatCounter (string word, string words)
+        //{
+        //    _userString1 = word;
+        //    _userString2 = words;
 
+        //}
 
         public void SetStringOne(string word)
         {
