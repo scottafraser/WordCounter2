@@ -25,6 +25,8 @@ namespace WordCount2
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseDeveloperExceptionPage(); 
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

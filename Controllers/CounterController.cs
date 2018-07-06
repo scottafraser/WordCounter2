@@ -18,18 +18,23 @@ namespace WordCount2.Controllers
         [HttpGet("/results")]
         public ActionResult Result()
         {
-
-            return View();
+            RepeatCounter words = new RepeatCounter();
+            words.SetStringOne(Request.Form["word-one"]);
+            words.SetStringTwo(Request.Form["list-words"]);
+            return View(words);
+           
         }
 
-        //[HttpPost("/results")]
-        //public ActionResult ResultPost()
-        //{
-        //    RepeatCounter newWordOne = new RepeatCounter(Request.Form["word-one"]);
-        //    //List<RepeatCounter> newWord = RepeatCounter.GetAll();
-           
-        //    return View("Result", newWordOne);
-        //}
+        [HttpPost("/results")]
+        public ActionResult ResultPost()
+        {
+            
+            RepeatCounter words = new RepeatCounter();
+            words.GetStringOne();
+            words.GetStringTwo();
+            return View(words);
+
+        }
 
 
 

@@ -10,13 +10,13 @@ namespace WordCount2.Models
         private int _x;
         private static List<RepeatCounter> _strings = new List<RepeatCounter> { };
 
-        public RepeatCounter (string word, string words, int instance)
-        {
-            _userString1 = word;
-            _userString2 = words;
-            _x = instance;
-            _strings.Add(this);
-        }
+        //public RepeatCounter (string word, string words, int instance)
+        //{
+        //    _userString1 = word;
+        //    _userString2 = words;
+        //    _x = instance;
+        //    _strings.Add(this);
+        //}
 
         public void SetStringOne(string word)
         {
