@@ -1,10 +1,17 @@
 ﻿using System;
+using Microsoft.AspNetCore.Mvc;
+using WordCount2.Models;
+
 namespace WordCount2.Controllers
 {
-    public class SplashController
+    public class SplashController : Controller
     {
-        public SplashController()
+        [HttpGet("/")]
+        public ActionResult Index()
         {
+            return View();
         }
+
+
     }
 }

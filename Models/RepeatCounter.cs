@@ -114,10 +114,5 @@ namespace WordCount2.Models
             return x;
         }
 
-        static void Main()
-        {
-
-
-        }
     }
 }
