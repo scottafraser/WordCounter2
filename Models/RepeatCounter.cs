@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace WordCount2.Models
 {
     public class RepeatCounter
@@ -6,10 +8,19 @@ namespace WordCount2.Models
         private string _userString1;
         private string _userString2;
         private int _x;
+        private static List<RepeatCounter> _strings = new List<RepeatCounter> { };
+
+        public RepeatCounter (string word, string words, int instance)
+        {
+            _userString1 = word;
+            _userString2 = words;
+            _x = instance;
+            _strings.Add(this);
+        }
 
         public void SetStringOne(string word)
         {
-            _userString1 = toLowerCase(word);
+            _userString1 = word.ToLower();
         }
 
         public string GetStringOne()
@@ -19,7 +30,7 @@ namespace WordCount2.Models
 
         public void SetStringTwo(string word)
         {
-            _userString2 = toLowerCase(word);
+            _userString2 = word.ToLower();
         }
 
         public string GetStringTwo()
@@ -38,18 +49,16 @@ namespace WordCount2.Models
             return _x;
         }
 
-        public string toLowerCase(string input)
+        public static List<RepeatCounter> GetAll()
         {
-            string lowerString = input.ToLower();
-            return lowerString;
+            return _strings;
         }
 
         public bool CorrectInput(string input)
         {
-            bool test = true;
-            if (IsNull(input) == true)
+            if (string.IsNullOrEmpty(input))
             {
-                test = false;
+                return false;
             }
             else
             {
@@ -57,40 +66,20 @@ namespace WordCount2.Models
                 {
                     if (char.IsDigit(letter) || input.Contains(" "))
                     {
-                        test = false;
-                    }
-                    else
-                    {
-                        test = true;
+                        return false;
                     }
                 }
             }
-
-            return test;
-        }
-
-        public bool IsNull(string input)
-        {
-            if (string.IsNullOrEmpty(input))
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
         }
+
 
         public bool ErrorAlert(string alert)
         {
-            if (CorrectInput(alert) == false)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return !(CorrectInput(alert));
 
         }
 

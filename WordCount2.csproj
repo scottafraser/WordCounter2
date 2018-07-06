@@ -18,9 +18,11 @@
   <ItemGroup>
     <Content Remove="Views\Counter\Index.cshtml" />
     <Content Remove="Views\Splash\Index.cshtml" />
+    <Content Remove="Views\Counter\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Views\Counter\Index.cshtml" />
     <None Include="Views\Splash\Index.cshtml" />
+    <None Include="Views\Counter\Result.cshtml" />
   </ItemGroup>
 </Project>

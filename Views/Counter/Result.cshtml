@@ -9,17 +9,15 @@
     <h1>Input a word!</h1>
     <div width="50%">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxEMjNV1_FX7SObJeU0CcP-BdizsLo357bmc9JSihsV8v64MbBuQ">
-        <form action="/game" method="post">
-            <div class="form-group">
-                <label for="word-one">Pick a word</label>
-                <input id="word-one" name="word-one" class="form-control" type="text">
+        <div>
+            <div>
+               <h1>@Model.GetStringOne()</h1>
             </div>
-            <div class="form-group">
-                <label for="list-words">Write out a few words</label>
-                <input id="list-words" name="list-words" class="form-control" type="text">
+            <div>
+               <h2>@Model.GetStringTwo()</h2>
             </div>
-            <a class="btn btn-primary" href="/results" role="button">Count matches</a>
-        </form>
+            <a class="btn btn-primary" href="/" role="button">Back</a>
+        </div>
     </div>
 </body>
 </html>
