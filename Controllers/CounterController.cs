@@ -7,36 +7,44 @@ namespace WordCount2.Controllers
 {
     public class CounterController : Controller
     {
-     
+
         [HttpGet("/begin")]
         public ActionResult Index()
         {
-            
+
             return View();
         }
 
-        [HttpGet("/results")]
+
+        [HttpGet("/resultForm")]
         public ActionResult Result()
         {
-            RepeatCounter words = new RepeatCounter();
-            words.SetStringOne(Request.Form["word-one"]);
-            words.SetStringTwo(Request.Form["list-words"]);
-            return View(words);
-           
+            RepeatCounter forms = new RepeatCounter();
+            forms.SetStringOne(Request.Query["word-one"]);
+            forms.SetStringTwo(Request.Query["list-words"]);
+
+            return View(forms);
         }
 
-        [HttpPost("/results")]
-        public ActionResult ResultPost()
+
+        [HttpPost("/result")]
+        public ActionResult Post()
         {
-            
-            RepeatCounter words = new RepeatCounter();
-            words.GetStringOne();
-            words.GetStringTwo();
-            return View(words);
+            RepeatCounter forms = new RepeatCounter();
+            forms.GetStringOne();
+            forms.GetStringTwo();
+           
 
+            return View("Result", forms);
         }
 
+        //[HttpPost("/result")]
+        //public ActionResult ResultPost()
+        //{
+        //    RepeatCounter forms = new RepeatCounter(word, words);
 
+        //    return View(forms);
 
+        //}
     }
 }
