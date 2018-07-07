@@ -27,18 +27,21 @@
     <Content Remove="Views\Shared\_Layout.cshtml" />
     <Content Remove="Views\Counter\InputList.cshtml" />
     <Content Remove="Views\Counter\Final.cshtml" />
+    <Content Remove="Views\Counter\Error.cshtml" />
+    <Content Remove="Views\Counter\Nomatch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Views\Counter\Index.cshtml" />
     <None Include="Views\Splash\Index.cshtml" />
-    <None Include="Views\Counter\Result.cshtml" />
     <None Include="wwwroot\css\styles.css" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Counter\InputList.cshtml" />
-    <None Include="Views\Counter\Final.cshtml" />
+    <None Include="Views\Counter\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\Counter\InputList.cshtml" />
     <Compile Remove="Views\Counter\Final.cshtml" />
+    <Compile Remove="Views\Counter\Error.cshtml" />
+    <Compile Remove="Views\Counter\Nomatch.cshtml" />
   </ItemGroup>
 </Project>

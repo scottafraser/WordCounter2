@@ -15,7 +15,6 @@ namespace WordCount2.Controllers
             return View();
         }
 
-
         [HttpPost("/inputlist")]
         public ActionResult InputList()
         {
@@ -24,7 +23,7 @@ namespace WordCount2.Controllers
             word.SetStringTwo(Request.Form["list-words"]);
             string string1 = word.GetStringOne();
             string string2 = word.GetStringTwo();
-                if (word.CorrectInput(string1) == true) 
+            if (word.CorrectInput(string1) == true && word.CorrectInputTwo(string2) == true) 
             {
                 string[] array = word.splitWord(string2);
                 word.SetVarX(word.CheckString(array));
@@ -37,42 +36,7 @@ namespace WordCount2.Controllers
             return View(word);
         }
 
-
-
-        //[HttpPost("/result")]
-        //public ActionResult Result()
-        //{
-        //    Item words = new Item();
-        //    words.GetStringOne();
-        //    words.SetStringTwo(Request.Form["list-words"]);
-            
-
-        //    return View(words);
-        //}
-
-        //[HttpGet("/result")]
-
-
-
-
-        //[HttpPost("/result")]
-        //public ActionResult Post()
-        //{
-        //    RepeatCounter forms = new RepeatCounter();
-        //    forms.GetStringOne();
-        //    forms.GetStringTwo();
-           
-
-        //    return View("Result", forms);
-        //}
-
-        //[HttpPost("/result")]
-        //public ActionResult ResultPost()
-        //{
-        //    RepeatCounter forms = new RepeatCounter(word, words);
-
-        //    return View(forms);
-
-        //}
+     
+        
     }
 }

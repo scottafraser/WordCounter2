@@ -13,19 +13,10 @@ namespace WordCount2.Models
         public  int _x;
 
 
-
-        //public Item (string userWord)
-        //{
-        //    _userString1 = userWord;
-        //    //_userString2 = new List<Item>;
-        //    _x = 0; 
-
-        //}
-
         public void SetStringOne(string word)
         {
             _userString1 = word;
-            //_userString1 = word.ToLower();
+            _userString1 = word.ToLower();
         }
 
         public string GetStringOne()
@@ -36,7 +27,7 @@ namespace WordCount2.Models
         public  void SetStringTwo(string word)
         {
             _userString2 = word;
-            //_userString2 = word.ToLower();
+            _userString2 = word.ToLower();
         }
 
         public string GetStringTwo()
@@ -51,17 +42,10 @@ namespace WordCount2.Models
 
         public int GetVarX()
         {
-            //_x = 0;
+          
             return _x;
         }
-
-     
-
-        //public static List<RepeatCounter> GetAll()
-        //{
-        //    return _strings;
-        //}
-
+  
         public bool CorrectInput(string input)
         {
             if (string.IsNullOrEmpty(input))
@@ -84,12 +68,30 @@ namespace WordCount2.Models
 
         }
 
-
-        public bool ErrorAlert(string alert)
+        public bool CorrectInputTwo(string input)
         {
-            return !(CorrectInput(alert));
+            if (string.IsNullOrEmpty(input))
+            {
+                return false;
+            }
+            else
+            {
+                foreach (char letter in input)
+                {
+                    if (char.IsDigit(letter) || !input.Contains(" "))
+                    {
+                        return false;
+                    }
+                }
+            }
+            {
+                return true;
+            }
 
         }
+
+
+
 
         public string[] splitWord(string phrase)
         {
