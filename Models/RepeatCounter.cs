@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace WordCount2.Models
 {
     public class Item
     {
-        private  string _userString1;
-        private  string _userString2;
-        private  int _x;
-        private static List<Item> _strings = new List<Item> { };
+        //private  static List<Item> _userstring2 = new List<Item>;
+        public  string _userString1;
+        public string _userString2;
+        public  int _x;
 
 
-        public Item (string userWord)
-        {
-            _userString1 = userWord;
-            _userString2 = GetStringTwo();
-            _x = 0; 
 
-        }
+        //public Item (string userWord)
+        //{
+        //    _userString1 = userWord;
+        //    //_userString2 = new List<Item>;
+        //    _x = 0; 
+
+        //}
 
         public void SetStringOne(string word)
         {
