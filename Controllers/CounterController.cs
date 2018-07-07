@@ -16,13 +16,13 @@ namespace WordCount2.Controllers
         }
 
 
-        [HttpGet("/inputlist")]
-        public ActionResult SetString()
+        [HttpPost("/inputlist")]
+        public ActionResult InputList()
         {
             Item word =new Item();
-            word.SetStringOne(Request.Query["word-one"]);
+            word.SetStringOne(Request.Form["word-one"]);
             
-            return View("InputList", word);
+            return View(word);
         }
 
         [HttpGet("/listForm")]
