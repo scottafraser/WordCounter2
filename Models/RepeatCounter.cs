@@ -3,20 +3,21 @@ using System.Collections.Generic;
 
 namespace WordCount2.Models
 {
-    public class RepeatCounter
+    public class Item
     {
         private  string _userString1;
         private  string _userString2;
         private  int _x;
-        private static List<RepeatCounter> _strings = new List<RepeatCounter> { };
+        private static List<Item> _strings = new List<Item> { };
 
 
-        //public RepeatCounter (string word, string words)
-        //{
-        //    _userString1 = word;
-        //    _userString2 = words;
+        public Item (string userWord)
+        {
+            _userString1 = userWord;
+            _userString2 = GetStringTwo();
+            _x = 0; 
 
-        //}
+        }
 
         public void SetStringOne(string word)
         {

@@ -16,14 +16,12 @@ namespace WordCount2.Controllers
         }
 
 
-        [HttpPost("/result")]
-        public ActionResult Result()
+        [HttpGet("/index")]
+        public ActionResult InputList()
         {
-            RepeatCounter forms = new RepeatCounter();
-            forms.SetStringOne(Request.Query["word-one"]);
-            forms.SetStringTwo(Request.Query["list-words"]);
+            Item word = new Item(Request.Query["word-one"]);
 
-            return View(forms);
+            return View(word);
         }
 
 
