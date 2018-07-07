@@ -51,7 +51,7 @@ namespace WordCount2.Models
 
         public int GetVarX()
         {
-            _x = 0;
+            //_x = 0;
             return _x;
         }
 
@@ -100,7 +100,7 @@ namespace WordCount2.Models
 
         public int CheckString(string[] array)
         {
-            int x = GetVarX();
+            int x = 0;
             foreach (string word in array)
             {
                 if (word == GetStringOne())

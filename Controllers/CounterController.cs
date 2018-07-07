@@ -20,18 +20,35 @@ namespace WordCount2.Controllers
         public ActionResult InputList()
         {
             Item word =new Item();
-            word.SetStringOne(Request.Form["word-one"]);
-            
+            word.SetStringOne(Request.Form["word-one"]); 
+            word.SetStringTwo(Request.Form["list-words"]);
+            string string1 = word.GetStringOne();
+            string string2 = word.GetStringTwo();
+                if (word.CorrectInput(string1) == true) 
+            {
+                string[] array = word.splitWord(string2);
+                word.SetVarX(word.CheckString(array));
+            }
+            else
+            {
+                return View("Error");  
+            }
+
             return View(word);
         }
 
-        [HttpGet("/listForm")]
-        public ActionResult Result()
-        {
-            //Item words = new Item);
 
-            return View();
-        }
+
+        //[HttpPost("/result")]
+        //public ActionResult Result()
+        //{
+        //    Item words = new Item();
+        //    words.GetStringOne();
+        //    words.SetStringTwo(Request.Form["list-words"]);
+            
+
+        //    return View(words);
+        //}
 
         //[HttpGet("/result")]
 
